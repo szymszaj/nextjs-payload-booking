@@ -1,18 +1,18 @@
-import Link from 'next/link'
-import { getPayload } from '@/lib/payload'
-import { ProductCard } from '@/components/product-card'
-import { Button } from '@/components/ui/button'
-import type { Product } from '@/payload-types'
+import Link from "next/link";
+import { getPayload } from "@/lib/payload";
+import { ProductCard } from "@/components/product-card";
+import { Button } from "@/components/ui/button";
+import type { Product } from "@/payload-types";
 
 export default async function HomePage() {
-  const payload = await getPayload()
+  const payload = await getPayload();
 
   const { docs: products } = await payload.find({
-    collection: 'products',
+    collection: "products",
     where: { isActive: { equals: true } },
     limit: 8,
-    sort: '-createdAt',
-  })
+    sort: "-createdAt",
+  });
 
   return (
     <div className="space-y-12">
@@ -47,5 +47,5 @@ export default async function HomePage() {
         )}
       </section>
     </div>
-  )
+  );
 }

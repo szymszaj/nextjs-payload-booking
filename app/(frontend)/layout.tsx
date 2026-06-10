@@ -1,10 +1,10 @@
-import { Navbar } from '@/components/navbar'
-import { Toaster } from 'sonner'
+import { Navbar } from "@/components/navbar";
+import { Toaster } from "sonner";
 
 export default function FrontendLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <>
@@ -14,5 +14,5 @@ export default function FrontendLayout({
       </main>
       <Toaster richColors position="top-right" />
     </>
-  )
+  );
 }
